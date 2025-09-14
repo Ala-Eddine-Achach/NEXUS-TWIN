@@ -1,0 +1,83 @@
+{
+    "input_json": {
+        "user_message": "I felt tired after my run today, but I ate a healthy lunch. Can you recommend what I should do tomorrow?",
+        "current_health_metrics": {
+            "energy_level": 62,
+            "recovery_index": 55,
+            "readiness_score": 58,
+            "timestamp": "2025-09-13T07:00:00"
+        },
+        "user_profile": {
+            "user_id": "user_000001",
+            "name": "User 1",
+            "email": "user1@example.com",
+            "age": 21,
+            "gender": "Male",
+            "height": 159.9,
+            "weight": 65.3,
+            "fitness_level": "Intermediate",
+            "join_date": "2025-04-02"
+        },
+        "measurement_id": "measurement_user_000001_00",
+        "date": "2025-07-30",
+        "weight": 66.7,
+        "body_fat": 18.1,
+        "muscle_mass": 62.8,
+        "bmi": 28.0,
+        "waist": 109.5,
+        "chest": 88.3,
+        "bicep": 43.1,
+        "thigh": 65.2,
+        "body_water": 59.2,
+        "bone_mass": 4.6,
+        "historical_context": [
+            {
+                "date": "2025-09-12",
+                "activities": [
+                    "Running 30min"
+                ],
+                "nutrition": [
+                    "Chicken salad lunch"
+                ],
+                "health_metrics": {
+                    "energy_level": 66,
+                    "recovery_index": 60,
+                    "readiness_score": 64
+                }
+            },
+            {
+                "date": "2025-09-11",
+                "activities": [
+                    "Cycling 20min"
+                ],
+                "nutrition": [
+                    "Omelette breakfast"
+                ],
+                "health_metrics": {
+                    "energy_level": 70,
+                    "recovery_index": 65,
+                    "readiness_score": 68
+                }
+            }
+        ],
+        "environmental_factors": {
+            "weather": "Sunny",
+            "season": "Fall",
+            "location": "Tunis",
+            "available_equipment": [
+                "Dumbbells",
+                "Yoga mat"
+            ]
+        },
+        "conversation_history": [
+            {
+                "user": "User 1",
+                "message": "I want to improve my recovery."
+            },
+            {
+                "assistant": "Advisor",
+                "message": "Focus on hydration and balanced nutrition."
+            }
+        ]
+    }
+}
