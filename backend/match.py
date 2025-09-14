@@ -337,8 +337,14 @@ async def match_endpoint(request: Request):
         
         # Extract data from request
         user_profile = body["user_profile"]
-        preferences = user_profile.get("preferences", {})  # Nested in user_profile now
+        # Check for preferences in user_profile first, then at root level for backward compatibility
+        preferences = user_profile.get("preferences", body.get("preferences", {}))
         candidates = body.get("candidates", [])  # List of candidate users
+
+        # Debug logging
+        print(f"[DEBUG] Preferences found: {preferences}")
+        print(f"[DEBUG] Age range: {preferences.get('age_range', 'NOT SET')}")
+        print(f"[DEBUG] Apply filters: {body.get('apply_filters', True)}")
 
         # Optional parameters
         apply_filters = body.get("apply_filters", True)
