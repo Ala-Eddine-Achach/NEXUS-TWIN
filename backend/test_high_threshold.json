@@ -1,0 +1,33 @@
+{
+    "user_profile": {
+        "user_id": "test_high_threshold",
+        "age": 28,
+        "gender": "Female",
+        "fitness_level": "Beginner",
+        "city": "Tunis",
+        "current_metrics": {
+            "energy_level": 60.0,
+            "recovery_index": 70.0,
+            "readiness_score": 65.0
+        },
+        "preferences": {
+            "want same city": true,
+            "age_range": [
+                25,
+                35
+            ],
+            "gender_preference": "any",
+            "activity_interests": [
+                "pilates",
+                "yoga"
+            ],
+            "intensity_preference": "low"
+        },
+        "current_activity_suggestion": {
+            "type": "pilates",
+            "duration": 30,
+            "intensity": "low"
+        }
+    },
+    "similarity_threshold": 0.8
+}

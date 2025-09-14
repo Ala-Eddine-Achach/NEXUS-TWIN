@@ -1,0 +1,33 @@
+{
+    "user_profile": {
+        "user_id": "validation_test",
+        "age": 25,
+        "gender": "Male",
+        "fitness_level": "Intermediate",
+        "city": "Tunis",
+        "current_metrics": {
+            "energy_level": 75.0,
+            "recovery_index": 80.0,
+            "readiness_score": 77.0
+        },
+        "preferences": {
+            "want same city": true,
+            "age_range": [
+                23,
+                27
+            ],
+            "gender_preference": "female",
+            "activity_interests": [
+                "cardio",
+                "strength_training"
+            ],
+            "intensity_preference": "moderate"
+        },
+        "current_activity_suggestion": {
+            "type": "cardio",
+            "duration": 30,
+            "intensity": "moderate"
+        }
+    },
+    "similarity_threshold": 0.1
+}

@@ -115,13 +115,39 @@ def get_nearby_fitness_places(lat, lon, radius=1000):
     # Reverse geocoding to get city name
     city = "Unknown"
     try:
-        geocode_url = f"https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lon}&zoom=10&addressdetails=1&accept-language=en"
-        geocode_headers = {"User-Agent": "your_email@example.com"}
-        geocode_resp = requests.get(geocode_url, headers=geocode_headers, timeout=10)
+        geocode_url = f"https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lon}&zoom=14&addressdetails=1&accept-language=en"
+        geocode_headers = {"User-Agent": "NeurobytesApp/1.0 (neurobytes@example.com)"}
+        geocode_resp = requests.get(geocode_url, headers=geocode_headers, timeout=15)
         geocode_resp.raise_for_status()
         geocode_data = geocode_resp.json()
-        address = geocode_data.get("address", {})
-        city = address.get("city") or address.get("town") or address.get("village") or address.get("municipality") or address.get("county") or "Unknown"
+        
+        print(f"[DEBUG] Geocoding response: {geocode_data}")  # Debug print
+        
+        if "address" in geocode_data:
+            address = geocode_data["address"]
+            # Try multiple address fields in order of preference
+            city = (address.get("city") or 
+                   address.get("town") or 
+                   address.get("municipality") or 
+                   address.get("village") or 
+                   address.get("suburb") or 
+                   address.get("neighbourhood") or 
+                   address.get("county") or 
+                   address.get("state_district") or 
+                   address.get("state") or 
+                   "Unknown")
+            print(f"[DEBUG] Extracted city: {city}")  # Debug print
+        else:
+            # Fallback: try to extract from display_name
+            display_name = geocode_data.get("display_name", "")
+            if display_name:
+                # Split by comma and take the first meaningful part
+                parts = [part.strip() for part in display_name.split(",")]
+                for part in parts:
+                    if part and not part.isdigit() and len(part) > 2:
+                        city = part
+                        break
+                print(f"[DEBUG] Extracted city from display_name: {city}")  # Debug print
     except Exception as e:
         print(f"[ERROR] Reverse geocoding failed: {e}")
         city = "Unknown"

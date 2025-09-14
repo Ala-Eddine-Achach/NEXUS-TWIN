@@ -1,0 +1,33 @@
+{
+    "user_profile": {
+        "user_id": "test_no_city_pref",
+        "age": 30,
+        "gender": "Female",
+        "fitness_level": "Advanced",
+        "city": "Paris",
+        "current_metrics": {
+            "energy_level": 90.0,
+            "recovery_index": 85.0,
+            "readiness_score": 95.0
+        },
+        "preferences": {
+            "want same city": false,
+            "age_range": [
+                25,
+                35
+            ],
+            "gender_preference": "any",
+            "activity_interests": [
+                "yoga",
+                "pilates"
+            ],
+            "intensity_preference": "low"
+        },
+        "current_activity_suggestion": {
+            "type": "yoga",
+            "duration": 45,
+            "intensity": "low"
+        }
+    },
+    "similarity_threshold": 0.2
+}

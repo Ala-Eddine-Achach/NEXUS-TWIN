@@ -5,3 +5,4 @@ requests
 location
 xgboost
 pandas
+numpy
