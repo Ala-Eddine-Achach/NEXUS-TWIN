@@ -1,0 +1,101 @@
+user_id,age,gender,city,suggestion_intensity,fitness_level,energy_level,recovery_index,readiness_score,age_range_min,age_range_max,gender_preference,activity_interests,intensity_preference,suggestion_type,duration,same_suggestion,same_city
+user_000001,39,Female,Sfax,moderate,Beginner,98.8,89.5,33.1,,,female,"pilates, cycling, yoga",high,strength_training,54,false,false
+user_000002,40,Male,Gabes,moderate,Intermediate,66.6,58.5,82.7,23,43,male,"pilates, yoga",moderate,yoga,44,False,False
+user_000003,25,Female,Ben Arous,high,Advanced,40.9,79.1,80.2,26,41,female,"yoga, cycling, cardio",high,pilates,49,True,False
+user_000004,47,Male,Monastir,low,Intermediate,30.7,9.5,64.2,23,35,female,"running, strength_training",high,yoga,55,True,False
+user_000005,36,Male,Ariana,low,Beginner,13.7,44.3,91.2,22,27,female,"pilates, cardio, strength_training",moderate,running,22,True,True
+user_000006,27,Female,Tozeur,low,Beginner,16.7,87.3,7.9,18,34,any,"yoga, strength_training, pilates",high,cycling,44,False,True
+user_000007,48,Male,Kairouan,low,Intermediate,41.5,36.2,74.5,26,34,female,"yoga, cycling, pilates",low,strength_training,23,True,True
+user_000008,45,Male,Medenine,high,Advanced,42.5,95.0,82.2,28,43,any,"pilates, cardio",moderate,cardio,44,True,True
+user_000009,21,Female,Gabes,low,Advanced,96.3,37.0,4.8,21,29,male,"yoga, cycling, running",low,cardio,31,True,False
+user_000010,20,Female,Sousse,low,Advanced,53.6,30.0,32.9,26,37,any,"pilates, yoga, running",low,running,27,False,False
+user_000011,22,Female,Tataouine,moderate,Intermediate,39.8,59.5,31.1,18,33,female,"cardio, yoga, running",low,cardio,45,True,True
+user_000012,22,Female,Tunis,moderate,Beginner,56.2,22.9,80.5,30,36,any,"running, pilates",low,cardio,36,True,False
+user_000013,47,Male,Tunis,low,Intermediate,85.7,74.6,51.7,22,37,male,cardio,low,strength_training,32,True,True
+user_000014,37,Male,Tunis,low,Beginner,23.5,24.2,39.4,24,43,female,"yoga, cardio, strength_training",high,yoga,37,True,True
+user_000015,22,Female,Hammamet,high,Intermediate,77.3,70.4,0.4,24,43,male,cycling,moderate,pilates,58,False,False
+user_000016,37,Female,Gafsa,low,Beginner,76.4,47.4,71.3,22,37,male,pilates,high,yoga,38,True,True
+user_000017,39,Male,Sfax,high,Intermediate,11.1,60.2,83.0,27,39,any,pilates,low,cardio,55,False,False
+user_000018,24,Female,Ariana,low,Beginner,63.9,39.9,36.7,30,37,female,"running, pilates, cardio",high,cardio,26,False,True
+user_000019,49,Female,Beja,low,Advanced,3.5,62.1,22.0,28,36,any,yoga,moderate,cardio,56,False,True
+user_000020,34,Female,Bizerte,low,Beginner,69.6,7.7,27.0,30,43,any,cardio,low,yoga,50,True,False
+user_000021,25,Female,Monastir,moderate,Advanced,40.2,44.1,71.6,20,38,female,cycling,moderate,strength_training,23,False,True
+user_000022,18,Male,Tataouine,moderate,Intermediate,65.3,3.9,47.7,18,37,male,"pilates, strength_training",moderate,cycling,30,True,False
+user_000023,41,Female,Tozeur,low,Beginner,92.5,7.8,94.1,21,29,female,cycling,moderate,running,34,False,False
+user_000024,22,Male,Bizerte,moderate,Intermediate,57.4,81.6,6.1,21,35,male,pilates,low,cardio,34,False,False
+user_000025,32,Female,Tozeur,moderate,Advanced,56.7,8.1,60.5,26,33,female,"yoga, strength_training, cycling",moderate,pilates,54,False,False
+user_000026,38,Male,Beja,moderate,Intermediate,57.0,78.2,35.4,22,32,female,"yoga, strength_training",low,yoga,57,False,False
+user_000027,28,Male,Sfax,low,Advanced,95.8,67.3,69.2,24,42,any,"running, strength_training, pilates",moderate,yoga,44,False,False
+user_000028,46,Male,Sfax,moderate,Advanced,90.1,81.2,42.3,27,47,female,"cardio, yoga",low,cycling,41,False,True
+user_000029,18,Male,Tataouine,low,Advanced,69.9,7.4,80.5,21,30,male,"pilates, yoga, cardio",high,yoga,20,False,False
+user_000030,50,Male,Medenine,low,Beginner,65.5,63.7,37.1,18,35,female,"pilates, cardio, running",moderate,strength_training,53,False,False
+user_000031,31,Male,Medenine,high,Advanced,52.9,99.5,4.4,23,43,any,"cycling, pilates",high,pilates,60,True,False
+user_000032,21,Female,Sousse,low,Advanced,13.0,93.3,47.1,24,37,male,"yoga, cardio",moderate,cycling,26,True,True
+user_000033,22,Male,Hammamet,moderate,Intermediate,2.3,90.6,37.0,25,32,any,running,moderate,running,55,False,True
+user_000034,25,Female,Tataouine,low,Intermediate,98.5,92.2,45.1,23,35,any,"yoga, pilates, cycling",moderate,strength_training,41,False,True
+user_000035,31,Male,Ariana,low,Beginner,45.9,23.8,49.0,24,37,male,"running, strength_training",high,running,57,False,True
+user_000036,39,Male,Tunis,moderate,Intermediate,49.6,22.9,78.7,18,29,any,pilates,moderate,cycling,33,True,False
+user_000037,31,Male,Tozeur,low,Advanced,70.4,97.5,54.1,18,33,male,yoga,low,yoga,34,False,False
+user_000038,43,Female,El Kef,low,Advanced,38.7,17.9,29.4,30,37,male,"running, pilates",low,yoga,25,True,True
+user_000039,26,Female,Ariana,low,Beginner,8.8,90.3,93.3,20,25,female,"running, cardio, yoga",moderate,cardio,39,True,False
+user_000040,50,Female,Mahdia,moderate,Beginner,50.4,73.9,75.4,30,40,any,"yoga, running",low,pilates,39,True,False
+user_000041,25,Male,Tunis,low,Beginner,24.0,70.9,53.9,25,31,any,strength_training,moderate,pilates,38,True,True
+user_000042,31,Male,Monastir,low,Intermediate,6.0,95.2,73.6,23,42,female,"strength_training, yoga",low,pilates,35,True,True
+user_000043,41,Female,Monastir,high,Intermediate,19.2,50.9,38.7,22,29,any,running,low,cardio,55,False,False
+user_000044,18,Female,Medenine,high,Intermediate,52.2,80.6,86.6,24,33,female,"yoga, strength_training",high,running,53,False,False
+user_000045,34,Male,Ariana,low,Beginner,5.1,9.1,2.8,21,30,male,"cardio, pilates",low,cycling,59,False,False
+user_000046,43,Male,Bizerte,moderate,Advanced,31.6,60.9,22.7,23,38,any,strength_training,low,cycling,51,False,True
+user_000047,28,Female,Sfax,high,Beginner,50.4,31.6,88.2,22,29,male,"cycling, pilates",low,cardio,53,False,False
+user_000048,45,Male,Beja,low,Intermediate,29.3,26.4,83.2,24,37,female,"running, pilates, cardio",low,strength_training,50,True,False
+user_000049,40,Male,Hammamet,moderate,Advanced,99.3,49.5,56.5,19,27,female,"running, pilates, cardio",high,cardio,32,False,True
+user_000050,34,Female,Nabeul,high,Beginner,40.2,99.0,6.4,20,40,any,"cardio, yoga",high,strength_training,23,False,True
+user_000051,43,Female,Tunis,low,Intermediate,16.3,29.6,71.1,23,32,any,"cardio, strength_training",high,strength_training,33,True,True
+user_000052,44,Female,Kairouan,moderate,Advanced,29.2,29.4,70.8,29,39,female,"cardio, yoga",high,strength_training,52,False,True
+user_000053,50,Male,Bizerte,low,Beginner,42.8,97.2,53.4,30,48,female,cardio,low,running,46,True,True
+user_000054,32,Male,Mahdia,high,Beginner,14.9,26.7,13.2,21,29,female,"yoga, strength_training, running",low,running,57,False,False
+user_000055,29,Male,Gafsa,low,Beginner,12.7,71.4,90.6,25,38,any,"strength_training, cycling",high,yoga,36,True,False
+user_000056,33,Male,Tataouine,moderate,Intermediate,57.3,21.1,2.2,26,36,any,"strength_training, yoga",low,cardio,50,False,True
+user_000057,36,Female,Ben Arous,moderate,Advanced,99.2,63.2,64.3,19,35,female,pilates,low,running,22,False,False
+user_000058,29,Male,Mahdia,moderate,Beginner,2.4,41.5,62.2,18,37,male,pilates,moderate,cardio,37,True,False
+user_000059,28,Female,Sfax,high,Advanced,79.3,87.1,69.0,25,43,female,"pilates, cardio",low,yoga,23,True,True
+user_000060,25,Female,Hammamet,moderate,Intermediate,92.2,51.8,20.0,29,45,male,"cycling, running",moderate,strength_training,48,True,True
+user_000061,21,Female,Beja,moderate,Beginner,29.0,90.0,68.6,27,46,female,cycling,low,running,52,True,True
+user_000062,43,Male,Kasserine,moderate,Intermediate,48.3,11.9,74.5,21,28,any,running,moderate,cardio,24,True,True
+user_000063,50,Female,Hammamet,moderate,Advanced,86.7,44.1,40.4,26,42,male,"strength_training, cycling",low,strength_training,51,True,False
+user_000064,31,Female,Kairouan,moderate,Intermediate,82.3,77.9,48.7,27,41,any,"cycling, strength_training, pilates",low,cardio,39,True,True
+user_000065,23,Male,El Kef,low,Advanced,82.8,27.3,80.2,21,41,male,"running, cycling",low,pilates,47,True,False
+user_000066,27,Male,Gafsa,low,Beginner,43.1,13.7,22.7,24,30,any,"strength_training, running",high,strength_training,46,False,False
+user_000067,48,Female,Ariana,low,Beginner,41.3,71.8,86.2,18,34,any,yoga,low,running,24,False,True
+user_000068,39,Female,Mahdia,high,Beginner,36.2,78.1,31.0,26,43,any,"strength_training, pilates, cycling",high,cardio,34,True,False
+user_000069,22,Female,Tunis,moderate,Beginner,48.2,3.0,39.8,28,47,female,strength_training,low,running,34,False,True
+user_000070,32,Female,Bizerte,moderate,Beginner,10.2,83.7,14.9,26,31,female,"strength_training, yoga",moderate,running,39,False,False
+user_000071,23,Male,Tozeur,high,Beginner,70.0,59.5,35.6,30,48,male,"cardio, strength_training",low,cycling,45,False,False
+user_000072,26,Male,Bizerte,high,Intermediate,90.3,15.1,22.0,27,43,any,"cardio, pilates, strength_training",moderate,strength_training,23,False,True
+user_000073,23,Female,Bizerte,low,Intermediate,41.4,46.8,84.4,18,38,female,cycling,low,strength_training,36,True,True
+user_000074,25,Female,Jendouba,moderate,Beginner,97.4,14.9,55.9,23,43,any,"cycling, cardio, running",high,running,53,False,True
+user_000075,23,Female,Gafsa,high,Beginner,65.7,2.7,86.6,27,46,any,"strength_training, cardio",moderate,cycling,21,True,False
+user_000076,40,Male,Tunis,moderate,Advanced,74.0,51.3,56.8,23,33,female,yoga,moderate,pilates,45,False,False
+user_000077,45,Male,El Kef,moderate,Beginner,31.7,98.4,70.1,19,24,female,"yoga, running",moderate,running,24,False,True
+user_000078,32,Female,Tataouine,moderate,Intermediate,51.3,36.0,84.0,25,34,male,"cardio, yoga",low,running,28,False,False
+user_000079,20,Female,Medenine,low,Advanced,20.6,41.4,9.7,18,35,female,"yoga, pilates, running",high,cycling,60,True,True
+user_000080,37,Male,Gafsa,low,Advanced,58.3,33.1,82.2,22,41,male,cycling,moderate,strength_training,48,False,False
+user_000081,28,Female,Gabes,low,Advanced,4.2,78.6,76.2,26,32,female,"running, strength_training",low,cardio,58,True,True
+user_000082,49,Male,Hammamet,high,Beginner,52.4,76.9,59.2,20,38,male,"running, strength_training, cycling",low,cardio,35,False,False
+user_000083,32,Female,Tataouine,low,Intermediate,89.2,84.2,23.2,18,32,female,cardio,low,cycling,56,True,False
+user_000084,46,Male,Gabes,low,Intermediate,32.1,52.4,97.5,22,31,female,"cardio, cycling, running",high,cardio,20,False,True
+user_000085,40,Male,Gabes,low,Advanced,67.0,21.6,56.6,30,50,male,"strength_training, cycling, pilates",moderate,strength_training,56,True,False
+user_000086,47,Male,Gabes,low,Beginner,47.7,3.3,67.1,26,45,male,"pilates, strength_training, running",low,strength_training,27,True,False
+user_000087,18,Female,Gabes,moderate,Intermediate,8.8,29.6,92.6,21,32,male,cardio,low,strength_training,30,False,True
+user_000088,50,Female,Ariana,high,Intermediate,31.9,24.8,8.9,27,39,any,"cardio, pilates, running",high,cardio,27,True,False
+user_000089,22,Male,Kasserine,low,Intermediate,13.6,93.2,39.8,25,42,female,"yoga, running, pilates",moderate,yoga,58,False,False
+user_000090,45,Female,Nabeul,moderate,Advanced,34.3,13.1,70.0,19,31,any,"strength_training, pilates",moderate,pilates,29,False,True
+user_000091,49,Male,Ben Arous,moderate,Intermediate,41.2,65.0,97.2,24,29,any,"running, pilates",low,yoga,59,False,False
+user_000092,32,Male,Tunis,moderate,Intermediate,35.6,14.6,81.9,21,31,male,"cycling, strength_training, cardio",high,strength_training,50,False,True
+user_000093,37,Female,Nabeul,high,Intermediate,51.0,55.8,75.4,18,29,female,"strength_training, running",high,cardio,40,False,False
+user_000094,29,Female,Ariana,high,Intermediate,14.8,81.8,19.8,22,29,male,"strength_training, cardio",high,strength_training,37,False,True
+user_000095,47,Male,Kairouan,low,Advanced,42.3,34.4,43.0,30,37,female,"running, cardio",high,running,32,False,True
+user_000096,28,Female,Medenine,moderate,Advanced,91.4,22.3,95.1,23,34,any,"pilates, yoga",low,cycling,41,False,False
+user_000097,25,Male,Bizerte,high,Beginner,26.9,30.5,33.3,24,29,female,"strength_training, yoga",moderate,pilates,58,False,True
+user_000098,22,Male,Jendouba,low,Intermediate,91.9,76.8,35.7,23,34,female,"cycling, pilates",moderate,running,29,False,False
+user_000099,38,Female,Gabes,low,Beginner,23.7,18.5,45.6,25,41,any,"running, pilates",moderate,cycling,28,False,True
+user_000100,37,Female,Bizerte,high,Advanced,60.3,67.2,34.3,19,39,male,"yoga, pilates",low,yoga,23,True,False

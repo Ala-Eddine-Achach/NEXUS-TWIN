@@ -117,6 +117,7 @@ export default function MatchingPage() {
         state.userProfile,
         preferences,
         currentActivitySuggestion,
+        state.locationData
       )
       console.log("✅ Match search completed successfully")
       console.log(`👥 Found ${response.matched_users?.length || 0} matches`)

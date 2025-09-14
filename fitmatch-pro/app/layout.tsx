@@ -2,13 +2,13 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
 import { AppProvider } from "@/contexts/app-context"
+import { AuthProvider } from "@/contexts/auth-context"
 import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "FitMatch Pro - AI Fitness Companion",
+  title: "Nexus Twin - AI Fitness Companion",
   description: "Your intelligent fitness companion with AI coaching, health analytics, and social matching",
   generator: "v0.app",
 }
@@ -22,9 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>
-          <AppProvider>{children}</AppProvider>
+          <AuthProvider>
+            <AppProvider>{children}</AppProvider>
+          </AuthProvider>
         </Suspense>
-        <Analytics />
       </body>
     </html>
   )

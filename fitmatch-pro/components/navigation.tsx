@@ -3,9 +3,10 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useAuth } from "@/contexts/auth-context"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Home, Activity, Brain, Users, MapPin, Settings, Menu, X } from "lucide-react"
+import { Home, Activity, Brain, Users, MapPin, Settings, Menu, X, LogOut } from "lucide-react"
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: Home },
@@ -19,6 +20,7 @@ const navigation = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const { logout, user } = useAuth()
 
   return (
     <>
@@ -55,6 +57,18 @@ export function Navigation() {
                 </Link>
               )
             })}
+
+            {/* Mobile Logout Button */}
+            <button
+              onClick={() => {
+                logout()
+                setIsOpen(false)
+              }}
+              className="flex items-center space-x-3 text-lg font-medium transition-colors text-destructive hover:text-destructive/80"
+            >
+              <LogOut className="h-6 w-6" />
+              <span>Logout</span>
+            </button>
           </nav>
         </div>
       )}
@@ -80,6 +94,18 @@ export function Navigation() {
               </Link>
             )
           })}
+
+          {/* Logout Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={logout}
+            className="rounded-full h-10 w-10 p-0 text-destructive hover:text-destructive hover:bg-destructive/10"
+            title={`Logout ${user?.firstName || 'User'}`}
+          >
+            <LogOut className="h-4 w-4" />
+            <span className="sr-only">Logout</span>
+          </Button>
         </div>
       </nav>
     </>

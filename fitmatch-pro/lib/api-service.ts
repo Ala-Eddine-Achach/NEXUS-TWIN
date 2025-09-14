@@ -176,24 +176,81 @@ export class ApiService {
     }
   }
 
-  private static getLastTwoDaysData(historicalData: HistoricalData): HistoricalData {
-    const twoDaysAgo = new Date()
+  private static getLastTwoDaysData(historicalData: HistoricalData) {
+    const today = new Date()
+    const yesterday = new Date(today)
+    yesterday.setDate(yesterday.getDate() - 1)
+    const twoDaysAgo = new Date(today)
     twoDaysAgo.setDate(twoDaysAgo.getDate() - 2)
 
-    const filterByDate = (items: any[]) => {
-      return items.filter((item) => {
-        const itemDate = new Date(item.date || item.timestamp)
-        return itemDate >= twoDaysAgo
-      })
+    // Helper function to get data for a specific day
+    const getDataForDay = (targetDate: Date) => {
+      const dateStr = targetDate.toISOString().split('T')[0]
+
+      // Find sleep data for the day
+      const sleepData = (historicalData.sleep || []).find(item =>
+        item.date === dateStr
+      )
+
+      // Find heart rate data for the day (using date_time field)
+      const heartRateData = (historicalData.heart_rate || []).find(item =>
+        item.date_time?.startsWith(dateStr)
+      )
+
+      // Find nutrition data for the day
+      const nutritionData = (historicalData.nutrition || []).filter(item =>
+        item.date === dateStr
+      )
+
+      // Find measurements for the day
+      const measurementData = (historicalData.measurements || []).find(item =>
+        item.date === dateStr
+      )
+
+      // Find activities for the day
+      const activityData = (historicalData.activities || []).filter(item =>
+        item.date === dateStr
+      )
+
+      // Calculate totals from nutrition data
+      const totalProtein = nutritionData.reduce((sum, item) => sum + (item.protein || 0), 0)
+      const totalCarbs = nutritionData.reduce((sum, item) => sum + (item.carbs || 0), 0)
+      const totalFat = nutritionData.reduce((sum, item) => sum + (item.fat || 0), 0)
+      const totalCalories = nutritionData.reduce((sum, item) => sum + (item.calories || 0), 0)
+
+      // Calculate calories burned from activities
+      const totalCaloriesBurned = activityData.reduce((sum, item) => sum + (item.calories_burned || 0), 0)
+
+      // Determine overall intensity from activities
+      const intensities = activityData.map(item => item.intensity || 'Low').filter(Boolean)
+      const avgIntensity = intensities.length > 0 ?
+        intensities.includes('High') ? 'High' :
+          intensities.includes('Moderate') ? 'Moderate' : 'Low' : 'Low'
+
+      return {
+        total_sleep: sleepData?.total_sleep || 7.5,
+        deep_sleep: sleepData?.deep_sleep || 1.8,
+        resting_heart_rate: sleepData?.resting_heart_rate || heartRateData?.value || 58,
+        calories: totalCalories || 2200,
+        calories_burned: totalCaloriesBurned || 2400,
+        protein: Math.round(totalProtein) || 110,
+        carbs: Math.round(totalCarbs) || 250,
+        fat: Math.round(totalFat) || 75,
+        intensity: avgIntensity,
+        value: measurementData?.weight || 65
+      }
     }
 
+    const dayTMinus2Data = getDataForDay(twoDaysAgo)
+    const dayTMinus1Data = getDataForDay(yesterday)
+
+    console.log("[v0] 📅 Formatted last 2 days data:")
+    console.log("[v0] Day T-2 (two days ago):", JSON.stringify(dayTMinus2Data, null, 2))
+    console.log("[v0] Day T-1 (yesterday):", JSON.stringify(dayTMinus1Data, null, 2))
+
     return {
-      measurements: filterByDate(historicalData.measurements || []),
-      nutrition: filterByDate(historicalData.nutrition || []),
-      activities: filterByDate(historicalData.activities || []),
-      workouts: filterByDate(historicalData.workouts || []),
-      sleep: filterByDate(historicalData.sleep || []),
-      heart_rate: filterByDate(historicalData.heart_rate || []),
+      day_t_minus_2: dayTMinus2Data,
+      day_t_minus_1: dayTMinus1Data
     }
   }
 
@@ -206,11 +263,20 @@ export class ApiService {
       console.log("[v0] Making health analytics API request to:", `${API_BASE_URL}/predict`)
 
       const lastTwoDaysData = this.getLastTwoDaysData(historicalData)
-      console.log("[v0] 📅 Last 2 days data:", JSON.stringify(lastTwoDaysData, null, 2))
+      console.log("[v0] 📅 Last 2 days data (NEW FORMAT):", JSON.stringify(lastTwoDaysData, null, 2))
+
+      // Verify the structure matches the expected format
+      console.log("[v0] 🔍 STRUCTURE VERIFICATION:")
+      console.log("  ✓ Has day_t_minus_2:", !!lastTwoDaysData.day_t_minus_2)
+      console.log("  ✓ Has day_t_minus_1:", !!lastTwoDaysData.day_t_minus_1)
+      console.log("  ✓ T-2 total_sleep:", lastTwoDaysData.day_t_minus_2?.total_sleep)
+      console.log("  ✓ T-1 total_sleep:", lastTwoDaysData.day_t_minus_1?.total_sleep)
+      console.log("  ✓ T-2 calories:", lastTwoDaysData.day_t_minus_2?.calories)
+      console.log("  ✓ T-1 calories:", lastTwoDaysData.day_t_minus_1?.calories)
 
       const requestBody = {
-        user_profile: userProfile,
-        historical_data: lastTwoDaysData,
+        day_t_minus_2: lastTwoDaysData.day_t_minus_2,
+        day_t_minus_1: lastTwoDaysData.day_t_minus_1,
       }
       console.log("[v0] 📤 Health Analytics API - REQUEST BODY:", JSON.stringify(requestBody, null, 2))
 
@@ -332,13 +398,21 @@ export class ApiService {
 
       // HYBRID APPROACH: Send old nested format to API (for server compatibility)
       // but log the new clean format for debugging
+      console.log("🌍 Location data analysis:")
+      console.log("  Raw locationData:", JSON.stringify(locationData, null, 2))
+      console.log("  locationData?.location?.city:", locationData?.location?.city)
+      console.log("  locationData?.city:", locationData?.city)
+
+      const extractedCity = locationData?.location?.city || locationData?.city || "Unknown"
+      console.log("  Final extracted city:", extractedCity)
+
       const requestBody = {
         user_profile: {
           user_id: userProfile.user_id,
           age: userProfile.age,
           gender: userProfile.gender,
           fitness_level: userProfile.fitness_level,
-          city: locationData?.location?.city || locationData?.city || "Unknown",
+          city: extractedCity,
           current_metrics: {
             energy_level: 82.1,
             recovery_index: 88.7,
@@ -364,7 +438,7 @@ export class ApiService {
         user_id: userProfile.user_id,
         age: userProfile.age,
         gender: userProfile.gender,
-        city: locationData?.location?.city || locationData?.city || "Unknown",
+        city: extractedCity,
         fitness_level: userProfile.fitness_level,
         energy_level: 82.1,
         recovery_index: 88.7,
@@ -391,7 +465,7 @@ export class ApiService {
   "user_id": "${userProfile.user_id}",
   "age": ${userProfile.age},
   "gender": "${userProfile.gender}",
-  "city": "${locationData?.location?.city || locationData?.city || 'Unknown'}",
+  "city": "${extractedCity}",
   "fitness_level": "${userProfile.fitness_level}",
   "energy_level": 82.1,
   "recovery_index": 88.7,

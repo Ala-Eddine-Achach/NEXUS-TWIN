@@ -1,0 +1,33 @@
+{
+    "user_profile": {
+        "user_id": "test_different_city",
+        "age": 26,
+        "gender": "Male",
+        "fitness_level": "Intermediate",
+        "city": "Casablanca",
+        "current_metrics": {
+            "energy_level": 75.0,
+            "recovery_index": 80.0,
+            "readiness_score": 78.0
+        },
+        "preferences": {
+            "want same city": true,
+            "age_range": [
+                20,
+                35
+            ],
+            "gender_preference": "any",
+            "activity_interests": [
+                "swimming",
+                "running"
+            ],
+            "intensity_preference": "moderate"
+        },
+        "current_activity_suggestion": {
+            "type": "swimming",
+            "duration": 45,
+            "intensity": "moderate"
+        }
+    },
+    "similarity_threshold": 0.2
+}

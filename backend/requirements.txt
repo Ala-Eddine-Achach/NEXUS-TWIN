@@ -5,3 +5,5 @@ requests
 location
 xgboost
 pandas
+numpy
+joblib

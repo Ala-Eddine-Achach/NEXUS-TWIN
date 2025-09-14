@@ -97,7 +97,8 @@ def predict_with_xgboost(input_data, model_dir="xgboost_models"):
         if os.path.exists(model_path):
             model = joblib.load(model_path)
             pred = model.predict(feature_df)[0]
-            predictions[target_names[target]] = float(pred)
+            ##two digits after decimal
+            predictions[target_names[target]] = round(float(pred), 2)
         else:
             predictions[target_names[target]] = None
     return predictions
