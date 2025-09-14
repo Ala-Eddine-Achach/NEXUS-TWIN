@@ -13,32 +13,41 @@ Nexus Twin is an innovative health and fitness platform that creates a digital t
 
 ## Architecture
 
-![Nexus Twin Architecture](./nexus-twin-architecture-diagram.svg)
+``
+┌─────────────────────────────────────────────────────────────────┐
+│                      NEXUS-TWIN ECOSYSTEM                       │
+├─────────────────────────────────────────────────────────────────┤
+│  Frontend (Next.js)          │  Backend (FastAPI)               │
+│  ├── Authentication          │  ├── ML Prediction Engine        │
+│  ├── Dashboard               │  ├── LLM Coach Service           │
+│  ├── Health Analytics        │  ├── Matching Algorithm          │
+│  ├── Social Matching         │  └── Location/Weather Service    │
+│  ├── Location Services       │                                  │
+│  └── AI Coach Interface      │                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-### Frontend (Next.js + TypeScript)
-- Component-based architecture using React
-- Context API for state management
-- Custom hooks for business logic
-- Responsive design for mobile/web
-- UI components built with Shadcn UI
+### Tech Stack
+**Frontend:**
+- **Framework:** Next.js 14 with TypeScript
+- **UI Library:** Radix UI components with shadcn/ui
+- **Styling:** Tailwind CSS with custom theme
+- **State Management:** React Context API
+- **Fonts:** Geist Sans & Mono
+- **Analytics:** Vercel Analytics
 
-### Backend (FastAPI + Python)
-- Microservices architecture
-- XGBoost ML models for health predictions
-- LLM integration for personalized coaching
-- RESTful API endpoints
-- Location-based services
+**Backend:**
+- **Framework:** FastAPI (Python)
+- **ML/AI:** XGBoost, scikit-learn, pandas, numpy
+- **LLM Integration:** OpenRouter API (GPT-3.5-turbo)
+- **HTTP Client:** requests
+- **Data Processing:** joblib for model serialization
 
-### Data Pipeline
-- Real-time health metrics collection
-- Data preprocessing and validation
-- Continuous model training pipeline
-- Secure data storage
+**Infrastructure:**
+- **Containerization:** Docker
+- **Development:** Hot reload with uvicorn
+- **CORS:** Full cross-origin support
 
-### Infrastructure
-- Docker containerization
-- Database storage for user profiles and health data
-- Performance monitoring
 
 ## How to Run
 
