@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="frontendGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="backendGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="pipelineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="infraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B7280;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:0.2"/>
+    </linearGradient>
+    
+    <!-- Arrow marker -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#4B5563"/>
+      </marker>
+    </defs>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#FAFAFA"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1F2937">Nexus Twin - Software Architecture</text>
+  
+  <!-- Layer 1: Application Layer -->
+  <text x="100" y="90" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#374151">Layer 1 - Application Layer</text>
+  
+  <!-- Frontend Section -->
+  <rect x="50" y="110" width="280" height="340" rx="12" ry="12" fill="url(#frontendGradient)" stroke="#3B82F6" stroke-width="2"/>
+  <text x="190" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E40AF">Frontend</text>
+  
+  <!-- Frontend Components -->
+  <rect x="70" y="160" width="240" height="80" rx="6" ry="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1"/>
+  <text x="190" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E40AF">Component-Based Architecture</text>
+  <text x="190" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">Context State Management</text>
+  <text x="190" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF">React Components + Context API</text>
+  <text x="190" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1E40AF">Service Layer + Custom Hooks</text>
+  
+  <rect x="70" y="250" width="110" height="40" rx="4" ry="4" fill="#F0F9FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="125" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">Mobile Interface</text>
+  
+  <rect x="200" y="250" width="110" height="40" rx="4" ry="4" fill="#F0F9FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="255" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">Web Interface</text>
+  
+  <!-- Frontend Patterns -->
+  <rect x="70" y="300" width="240" height="130" rx="6" ry="6" fill="#F8FAFC" stroke="#3B82F6" stroke-width="1"/>
+  <text x="190" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E40AF">Architectural Patterns</text>
+  <text x="190" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">• Context Provider Pattern</text>
+  <text x="190" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">• Custom Hook Pattern</text>
+  <text x="190" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">• Service Layer Pattern</text>
+  <text x="190" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">• Component Composition</text>
+  <text x="190" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">• Reducer Pattern</text>
+  <text x="190" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">• Real-time State Updates</text>
+
+  <!-- API Gateway -->
+  <rect x="380" y="240" width="120" height="50" rx="6" ry="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="440" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400E">API Gateway</text>
+  <text x="440" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#92400E">REST Bridge</text>
+  
+  <!-- Backend Section -->
+  <rect x="550" y="110" width="280" height="340" rx="12" ry="12" fill="url(#backendGradient)" stroke="#10B981" stroke-width="2"/>
+  <text x="690" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#059669">Microservices Backend</text>
+  
+  <!-- Health Twin Engine -->
+  <rect x="570" y="160" width="240" height="80" rx="6" ry="6" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  <text x="690" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#059669">Health Twin Engine</text>
+  <text x="690" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#065F46">XGBoost ML Models</text>
+  <text x="690" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#065F46">Energy • Recovery • Readiness Predictions</text>
+  
+  <!-- AI Health Advisor -->
+  <rect x="570" y="260" width="240" height="80" rx="6" ry="6" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  <text x="690" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#059669">AI Health Advisor</text>
+  <text x="690" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#065F46">LLM Recommendations</text>
+  <text x="690" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#065F46">Personalized Coaching • Nutrition Plans</text>
+  
+  <!-- Partner Matching Service -->
+  <rect x="570" y="360" width="240" height="80" rx="6" ry="6" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  <text x="690" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#059669">Partner Matching Service</text>
+  <text x="690" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#065F46">Compatibility Algorithms</text>
+  <text x="690" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#065F46">Location-aware • Activity-based Matching</text>
+
+  <!-- Data Pipeline Section -->
+  <rect x="870" y="110" width="280" height="340" rx="12" ry="12" fill="url(#pipelineGradient)" stroke="#F59E0B" stroke-width="2"/>
+  <text x="1010" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#D97706">Data Pipeline</text>
+  
+  <!-- Data Collection -->
+  <rect x="890" y="160" width="240" height="50" rx="6" ry="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1010" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400E">Data Collection</text>
+  <text x="1010" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#92400E">Real-time Health Metrics</text>
+  
+  <!-- Data Sources -->
+  <rect x="890" y="220" width="240" height="80" rx="6" ry="6" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1010" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#92400E">Data Sources</text>
+  <text x="1010" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#78350F">Sleep • Nutrition • Activity</text>
+  <text x="1010" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#78350F">Biometrics • Heart Rate</text>
+  <text x="1010" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#78350F">Environmental Data</text>
+  
+  <!-- Data Processing -->
+  <rect x="890" y="310" width="240" height="50" rx="6" ry="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1010" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400E">Data Cleaning</text>
+  <text x="1010" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#92400E">Preprocessing • Validation</text>
+  
+  <!-- Model Training -->
+  <rect x="890" y="370" width="240" height="50" rx="6" ry="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1010" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400E">Model Training</text>
+  <text x="1010" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#92400E">Continuous Learning Pipeline</text>
+
+  <!-- Layer Separator -->
+  <line x1="50" y1="480" x2="1150" y2="480" stroke="#6B7280" stroke-width="2"/>
+  
+  <!-- Layer 2: Infrastructure -->
+  <text x="100" y="510" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#374151">Layer 2 - Infrastructure</text>
+  
+  <!-- Docker Infrastructure Layer -->
+  <rect x="50" y="530" width="1100" height="200" rx="12" ry="12" fill="url(#infraGradient)" stroke="#6B7280" stroke-width="2"/>
+  <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#374151">Docker Infrastructure Layer</text>
+  
+  <!-- Container Services -->
+  <rect x="100" y="580" width="200" height="120" rx="6" ry="6" fill="#F9FAFB" stroke="#6B7280" stroke-width="1"/>
+  <text x="200" y="600" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Container Services</text>
+  <text x="200" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• FastAPI Backend</text>
+  <text x="200" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• React Frontend</text>
+  <text x="200" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• ML Models</text>
+  <text x="200" y="685" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Data Pipeline</text>
+  
+  <!-- Database Storage -->
+  <rect x="350" y="580" width="200" height="120" rx="6" ry="6" fill="#F9FAFB" stroke="#6B7280" stroke-width="1"/>
+  <text x="450" y="600" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Database Storage</text>
+  <text x="450" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• User Profiles</text>
+  <text x="450" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Health Data</text>
+  <text x="450" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• ML Model Storage</text>
+  <text x="450" y="685" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Session Management</text>
+  
+  <!-- Orchestration -->
+  <rect x="600" y="580" width="200" height="120" rx="6" ry="6" fill="#F9FAFB" stroke="#6B7280" stroke-width="1"/>
+  <text x="700" y="600" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Orchestration</text>
+  <text x="700" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Docker Compose</text>
+  <text x="700" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Service Discovery</text>
+  <text x="700" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Load Balancing</text>
+  <text x="700" y="685" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Health Monitoring</text>
+  
+  <!-- Monitoring & Security -->
+  <rect x="850" y="580" width="200" height="120" rx="6" ry="6" fill="#F9FAFB" stroke="#6B7280" stroke-width="1"/>
+  <text x="950" y="600" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Monitoring &amp; Security</text>
+  <text x="950" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• API Security</text>
+  <text x="950" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Data Encryption</text>
+  <text x="950" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Performance Metrics</text>
+  <text x="950" y="685" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Error Tracking</text>
+
+  <!-- Communication Arrows -->
+  <!-- Frontend to API Gateway -->
+  <line x1="330" y1="260" x2="380" y2="260" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="380" y1="275" x2="330" y2="275" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- API Gateway to Backend -->
+  <line x1="500" y1="260" x2="550" y2="260" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="275" x2="500" y2="275" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Data Pipeline to Backend -->
+  <line x1="870" y1="350" x2="830" y2="350" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="850" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4B5563">Real-time Flow</text>
+  
+  <!-- Infrastructure Support Arrows -->
+  <line x1="190" y1="450" x2="190" y2="530" stroke="#6B7280" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="440" y1="450" x2="440" y2="530" stroke="#6B7280" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="690" y1="450" x2="690" y2="530" stroke="#6B7280" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="1010" y1="450" x2="1010" y2="530" stroke="#6B7280" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Technology Labels -->
+  <text x="600" y="780" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#6B7280">
+    Technologies: React, TypeScript, FastAPI, Python, XGBoost, Docker, OpenRouter AI
+  </text>
+
+</svg>
