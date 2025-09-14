@@ -349,7 +349,7 @@ async def match_endpoint(request: Request):
         if not candidates:
             import os
             import pandas as pd
-            csv_path = body.get("csv_path", "test_data.csv")
+            csv_path = body.get("csv_path", "tests/test_data.csv")
             if os.path.exists(csv_path):
                 df = pd.read_csv(csv_path)
                 # Convert DataFrame rows to candidate dicts
