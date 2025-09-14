@@ -1,0 +1,186 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import { useApp } from "@/contexts/app-context"
+import { Navigation } from "@/components/navigation"
+import { DashboardHeader } from "@/components/dashboard/dashboard-header"
+import { MetricsOverview } from "@/components/dashboard/metrics-overview"
+import { ActivityChart } from "@/components/dashboard/activity-chart"
+import { HealthScores } from "@/components/dashboard/health-scores"
+import { RecentActivities } from "@/components/dashboard/recent-activities"
+import { QuickActions } from "@/components/dashboard/quick-actions"
+import { LoadingSpinner } from "@/components/ui/loading-spinner"
+import { ApiService } from "@/lib/api-service"
+
+export default function Dashboard() {
+  const { state, actions } = useApp()
+  const [hasInitialized, setHasInitialized] = useState(false)
+
+  useEffect(() => {
+    const initializeData = async () => {
+      if (hasInitialized || state.userProfile) {
+        console.log("[v0] Dashboard already initialized, skipping")
+        return
+      }
+
+      console.log("[v0] Initializing dashboard data")
+      setHasInitialized(true)
+
+      // Sample user profile that matches your API spec
+      const sampleProfile = {
+        user_id: "user_000001",
+        age: 21,
+        gender: "Male",
+        height: 159.9,
+        weight: 65.3,
+        fitness_level: "Intermediate",
+      }
+
+      // Sample historical data that matches your API spec
+      const sampleHistoricalData = {
+        measurements: [
+          {
+            date: "2025-07-30",
+            weight: 66.7,
+            body_fat: 18.1,
+            muscle_mass: 62.8,
+            bmi: 28.0,
+          },
+        ],
+        nutrition: [
+          {
+            date: "2025-09-12",
+            meal_type: "Breakfast",
+            calories: 317,
+            protein: 21.5,
+            carbs: 97.5,
+            fat: 29.7,
+            fiber: 14.4,
+            water_intake: 1.0,
+          },
+        ],
+        activities: [
+          {
+            date: "2025-09-12",
+            activity_type: "Pilates",
+            duration: 99,
+            calories_burned: 395,
+            intensity: "Low",
+            heart_rate_avg: 106,
+          },
+        ],
+        workouts: [
+          {
+            date: "2025-09-10",
+            workout_type: "Pilates",
+            duration: 38,
+            calories_burned: 349,
+            heart_rate_avg: 139,
+            rest_time: 130,
+          },
+        ],
+        sleep: [
+          {
+            date: "2025-09-12",
+            total_sleep: 7.2,
+            deep_sleep: 2.5,
+            sleep_efficiency: 91.8,
+            resting_heart_rate: 49,
+          },
+        ],
+        heart_rate: [
+          {
+            date_time: "2025-09-12 10:24:28",
+            value: 50,
+            zone: "Peak",
+            context: "Daily Activity",
+          },
+        ],
+      }
+
+      actions.updateUserProfile(sampleProfile)
+      actions.updateHistoricalData(sampleHistoricalData)
+
+      try {
+        console.log("[v0] Attempting to fetch health analytics from API...")
+        const healthAnalytics = await ApiService.getHealthAnalytics(sampleProfile, sampleHistoricalData)
+        console.log("[v0] Health analytics received:", healthAnalytics)
+        actions.updateHealthAnalytics(healthAnalytics)
+      } catch (error) {
+        console.log("[v0] Health analytics API failed, using fallback data:", error)
+        // Don't throw - let the app continue with fallback data
+      }
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const locationData = {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+            }
+
+            try {
+              console.log("[v0] Attempting to fetch location data from API...")
+              const weatherData = await ApiService.getLocationData(locationData)
+              console.log("[v0] Weather data received:", weatherData)
+              actions.updateWeatherData(weatherData)
+            } catch (error) {
+              console.log("[v0] Location API failed:", error)
+              // Continue without location data
+            }
+          },
+          (error) => {
+            console.log("[v0] Geolocation permission denied or failed:", error)
+          },
+        )
+      }
+
+      try {
+        console.log("[v0] Attempting to fetch AI coach advice from API...")
+        const coachAdvice = await ApiService.getAICoachAdvice(sampleProfile, sampleHistoricalData)
+        console.log("[v0] AI coach advice received:", coachAdvice)
+        actions.updateCoachAdvice(coachAdvice)
+      } catch (error) {
+        console.log("[v0] AI coach API failed, using fallback data:", error)
+        // Don't throw - let the app continue with fallback data
+      }
+    }
+
+    initializeData()
+  }, [hasInitialized, state.userProfile, actions])
+
+  if (state.isLoading && !state.userProfile) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-6 pb-24 md:pb-6">
+        <DashboardHeader />
+
+        <div className="grid gap-6 mt-6">
+          {/* Metrics Overview */}
+          <MetricsOverview />
+
+          {/* Health Scores */}
+          <HealthScores />
+
+          {/* Activity Chart */}
+          <ActivityChart />
+
+          {/* Recent Activities and Quick Actions */}
+          <div className="grid gap-6 md:grid-cols-2">
+            <RecentActivities />
+            <QuickActions />
+          </div>
+        </div>
+      </div>
+
+      <Navigation />
+    </div>
+  )
+}
