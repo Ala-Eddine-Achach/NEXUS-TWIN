@@ -6,3 +6,4 @@ location
 xgboost
 pandas
 numpy
+joblib
