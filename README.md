@@ -69,7 +69,11 @@ python -m uvicorn main:app --host 0.0.0.0 --port 8000
 
 ### Using Docker
 ```bash
-docker-compose up --build
+cd backend
+docker stop neurobytes-backend
+docker rm neurobytes-backend
+docker build -t neurobytes-backend .
+docker run -d -p 8000:8000 --name neurobytes-backend neurobytes-backend
 ```
 
 The application will be available at:
