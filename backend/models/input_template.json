@@ -1,0 +1,26 @@
+{
+  "day_t_minus_2": {
+    "total_sleep": 7.5,
+    "deep_sleep": 1.8,
+    "resting_heart_rate": 58,
+    "calories": 2200,
+    "calories_burned": 2400,
+    "protein": 110,
+    "carbs": 250,
+    "fat": 75,
+    "intensity": "Moderate",
+    "value": 65
+  },
+  "day_t_minus_1": {
+    "total_sleep": 8.2,
+    "deep_sleep": 2.1,
+    "resting_heart_rate": 56,
+    "calories": 2300,
+    "calories_burned": 2100,
+    "protein": 120,
+    "carbs": 270,
+    "fat": 80,
+    "intensity": "Low",
+    "value": 68
+  }
+}
